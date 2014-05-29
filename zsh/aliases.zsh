@@ -150,6 +150,9 @@ alias srdm='spring rake db:migrate'
 alias srdt='spring rake db:migrate'
 alias srdmt='spring rake db:migrate db:test:prepare'
 
+#Custom Alias
+alias ext='cd /Volumes/SumEDGE'
+
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
 alias sp='sprintly'
 # spb = sprintly branch - create a branch automatically based on the bug you're working on
