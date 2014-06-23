@@ -88,6 +88,7 @@ alias gtr='grb track'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
+alias gpsopm='git push origin master'
 alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
@@ -152,6 +153,15 @@ alias srdmt='spring rake db:migrate db:test:prepare'
 
 #Custom Alias
 alias ext='cd /Volumes/SumEDGE'
+alias vm='ssh vagrant@127.0.0.1 -p 2222'
+alias musicdl='/Volumes/SumEDGE/Music/vksearch/vksearch --get-one'
+alias h='howdoi'
+alias hj='howdoi javascript'
+alias hph='howdoi php'
+alias hn='howdoi node.js'
+alias hpy='howdoi python'
+alias hoc='howdoi objective c'
+alias hsw='howdoi swift'
 
 # Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
 alias sp='sprintly'
