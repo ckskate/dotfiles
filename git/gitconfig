@@ -127,4 +127,12 @@
   path = .gitconfig.user
 [user]
 	name = Sumukh Sridhara
+	email = =
+	email = =
+	email = =
+	email = --replace-all
+	email = --add
 	email = sumukh1@gmail.com
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

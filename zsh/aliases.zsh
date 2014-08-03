@@ -9,6 +9,7 @@ alias ydv='yadr vim-delete-plugin'
 alias ylv='yadr vim-list-plugin'
 alias yup='yadr update-plugins'
 alias yip='yadr init-plugins'
+alias yad='cd $yadr'
 
 # PS
 alias psa="ps aux"
@@ -40,6 +41,7 @@ fi
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
+alias ye='vim ~/.yadr/vim/after/vimrc.after'
 
 # zsh profile editing
 alias ze='vim ~/.zshrc'
@@ -88,6 +90,7 @@ alias gtr='grb track'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
+alias gpol='git pull origin master'
 alias gpsopm='git push origin master'
 alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
@@ -131,7 +134,7 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # TODOS
 # This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
 # to find the note called 'todo'
-alias todo='open nvalt://find/todo'
+# alias todo='open nvalt://find/todo'
 
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
@@ -155,15 +158,29 @@ alias srdmt='spring rake db:migrate db:test:prepare'
 alias ext='cd /Volumes/SumEDGE'
 alias vm='ssh vagrant@127.0.0.1 -p 2222'
 alias musicdl='/Volumes/SumEDGE/Music/vksearch/vksearch --get-one'
+alias hdi='howdoi'
 alias h='howdoi'
-alias hj='howdoi javascript'
-alias hph='howdoi php'
-alias hn='howdoi node.js'
+alias hjs='howdoi javascript'
+alias hphp='howdoi php'
+alias hnode='howdoi node.js'
 alias hpy='howdoi python'
 alias hoc='howdoi objective c'
 alias hsw='howdoi swift'
+alias m='mosh'
+alias serve='python3 -m http.server'
 
-# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-alias sp='sprintly'
+
+
+#Custom Suffix Aliases
+alias -s py=vim
+alias -s php=vim
+alias -s java=vim
+alias -s html=vim
+alias -s html=vim
+alias -s css=vim
+alias -s js=vim
+alias -s txt=vim
+
+
 # spb = sprintly branch - create a branch automatically based on the bug you're working on
 alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
