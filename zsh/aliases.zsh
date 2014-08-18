@@ -197,3 +197,10 @@ alias dbm='spring rake db:migrate'
 alias dbmr='spring rake db:migrate:redo'
 alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
+
+dokkuthings() {
+    #do things with parameters like $1 such as
+     ssh dokku "dokku $*"
+}
+alias dokku=dokkuthings
+
