@@ -168,7 +168,8 @@ alias hoc='howdoi objective c'
 alias hsw='howdoi swift'
 alias m='mosh'
 alias serve='python3 -m http.server'
-
+alias ta='ssh 61a'
+alias ta2='ssh ta'
 
 
 #Custom Suffix Aliases
