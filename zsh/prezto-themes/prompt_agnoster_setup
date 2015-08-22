@@ -84,10 +84,8 @@ prompt_git() {
 
 # Dir: current working directory
 prompt_dir() {
-
-  prompt_segment blue black "$(sed 's:\([^/]\)[^/]*/:\1/:g' <<<$PWD)"
-
-  #prompt_segment blue black '%~'
+  #prompt_segment blue black "$(sed 's:\([^/]\)[^/]*/:\1/:g' <<<$PWD)"
+  prompt_segment blue black '%~'
 }
 
 # Status:
