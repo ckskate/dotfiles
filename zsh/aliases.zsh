@@ -3,6 +3,15 @@
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
 
+# Get operating system
+platform='unknown'
+unamestr=$(uname)
+if [[ $unamestr == 'Linux' ]]; then
+  platform='linux'
+elif [[ $unamestr == 'Darwin' ]]; then
+  platform='darwin'
+fi
+
 # YADR support
 alias yav='yadr vim-add-plugin'
 alias ydv='yadr vim-delete-plugin'
@@ -18,19 +27,31 @@ alias psr='ps aux | grep ruby'
 
 # Moving around
 alias cdb='cd -'
+alias cls='clear;ls'
 
 # Show human friendly numbers and colors
 alias df='df -h'
-alias ll='ls -alGh'
-alias ls='ls -Gh'
 alias du='du -h -d 2'
+
+if [[ $platform == 'linux' ]]; then
+  alias ll='ls -alh --color=auto'
+  alias ls='ls --color=auto'
+elif [[ $platform == 'darwin' ]]; then
+  alias ll='ls -alGh'
+  alias ls='ls -Gh'
+fi
 
 # show me files matching "ls grep"
 alias lsg='ll | grep'
 
 # Alias Editing
+TRAPHUP() {
+  source $yadr/zsh/aliases.zsh
+}
+
 alias ae='vim $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
+alias gar="killall -HUP -u \"$USER\" zsh"  #global alias reload
 
 # vim using
 mvim --version > /dev/null 2>&1
@@ -38,6 +59,9 @@ MACVIM_INSTALLED=$?
 if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
+
+# mimic vim functions
+alias :q='exit'
 
 # vimrc editing
 alias ve='vim ~/.vimrc'
@@ -63,6 +87,7 @@ alias gci='git ci'
 alias gco='git co'
 alias gcp='git cp'
 alias ga='git add -A'
+alias gap='git add -p'
 alias guns='git unstage'
 alias gunc='git uncommit'
 alias gm='git merge'
@@ -84,15 +109,21 @@ alias gfch='git fetch'
 alias gd='git diff'
 alias gb='git b'
 alias gbd='git b -D -w'
+# Staged and cached are the same thing
 alias gdc='git diff --cached -w'
+alias gds='git diff --staged -w'
 alias gpub='grb publish'
 alias gtr='grb track'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
+<<<<<<< HEAD
 alias gpol='git pull origin master'
 alias gpsopm='git push origin master'
 alias gpsh='git push'
+=======
+alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+>>>>>>> master
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
@@ -119,8 +150,12 @@ alias gz='tar -zcvf'
 
 # Ruby
 alias c='rails c' # Rails 3
-alias co='script/console --irb=pry' # Rails 2
-alias ts='thin start'
+alias co='script/console' # Rails 2
+alias cod='script/console --debugger'
+
+#If you want your thin to listen on a port for local VM development
+#export VM_IP=10.0.0.1 <-- your vm ip
+alias ts='thin start -a ${VM_IP:-127.0.0.1}'
 alias ms='mongrel_rails start'
 alias tfdl='tail -f log/development.log'
 alias tftl='tail -f log/test.log'
@@ -200,9 +235,5 @@ alias dbmr='spring rake db:migrate:redo'
 alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
-dokkuthings() {
-    #do things with parameters like $1 such as
-     ssh dokku "dokku $*"
-}
-alias dokku=dokkuthings
-
+# Homebrew
+alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
