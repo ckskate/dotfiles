@@ -117,13 +117,9 @@ alias gtr='grb track'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
-<<<<<<< HEAD
 alias gpol='git pull origin master'
 alias gpsopm='git push origin master'
 alias gpsh='git push'
-=======
-alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
->>>>>>> master
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
@@ -166,20 +162,8 @@ alias k9='kill -9'
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
 
-# TODOS
-# This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
-# to find the note called 'todo'
-# alias todo='open nvalt://find/todo'
-
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
-
-alias rdm='rake db:migrate'
-alias rdmr='rake db:migrate:redo'
-
-# Zeus
-alias zs='zeus server'
-alias zc='zeus console'
 
 # Rspec
 alias rs='rspec spec'
@@ -191,9 +175,7 @@ alias srdt='spring rake db:migrate'
 alias srdmt='spring rake db:migrate db:test:prepare'
 
 #Custom Alias
-alias ext='cd /Volumes/SumEDGE'
 alias vm='ssh vagrant@127.0.0.1 -p 2222'
-alias musicdl='/Volumes/SumEDGE/Music/vksearch/vksearch --get-one'
 alias hdi='howdoi'
 alias h='howdoi'
 alias hjs='howdoi javascript'
@@ -204,20 +186,6 @@ alias hoc='howdoi objective c'
 alias hsw='howdoi swift'
 alias m='mosh'
 alias serve='python3 -m http.server'
-alias ta='ssh 61a'
-alias ta2='ssh ta'
-
-
-#Custom Suffix Aliases
-alias -s py=vim
-alias -s php=vim
-alias -s java=vim
-alias -s html=vim
-alias -s html=vim
-alias -s css=vim
-alias -s js=vim
-alias -s txt=vim
-
 
 # spb = sprintly branch - create a branch automatically based on the bug you're working on
 alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
@@ -228,12 +196,6 @@ alias grb='git recent-branches'
 # Finder
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-
-alias dbtp='spring rake db:test:prepare'
-alias dbm='spring rake db:migrate'
-alias dbmr='spring rake db:migrate:redo'
-alias dbmd='spring rake db:migrate:down'
-alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
 alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'
