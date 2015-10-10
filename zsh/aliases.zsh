@@ -140,7 +140,7 @@ alias l='less'
 alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
-alias rm='safe-rm'
+
 # Zippin
 alias gz='tar -zcvf'
 
@@ -187,8 +187,14 @@ alias hsw='howdoi swift'
 alias m='mosh'
 alias serve='python3 -m http.server'
 
-# spb = sprintly branch - create a branch automatically based on the bug you're working on
-alias spb="git checkout -b \`sp | tail -2 | grep '#' | sed 's/^ //' | sed 's/[^A-Za-z0-9 ]//g' | sed 's/ /-/g' | cut -d"-" -f1,2,3,4,5\`"
+# tmux 
+alias ta='tmux attach -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+
+
 
 alias hpr='hub pull-request'
 alias grb='git recent-branches'

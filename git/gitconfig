@@ -131,3 +131,7 @@
 [user]
 	name = Sumukh Sridhara
 	email = sumukh1@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
