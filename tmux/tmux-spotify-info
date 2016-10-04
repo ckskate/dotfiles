@@ -7,11 +7,11 @@ tell application "Spotify"
       set track_name to name of current track
       set artist_name to artist of current track
       set song_display to " " & track_name & " - " & artist_name & " "
-      if length of song_display is less than 25 then
-        set song_display to song_display
-      else
-        set song_display to text 1 through 20 of song_display & "... "
-      end if
+      # if length of song_display is less than 25 then
+      set song_display to song_display
+      # else
+        # set song_display to text 1 through 20 of song_display & "... "
+      # end if
       return song_display
     end if
   end if
